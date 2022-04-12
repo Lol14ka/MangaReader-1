@@ -64,15 +64,9 @@ async function search() {
                     tagdiv.appendChild(tagtext);
                 }
 
-                //create desc
-                var desctext = document.createElement('p');
-                desctext.innerHTML = desc;
-                desctext.className = 'paneldesc';
-
                 //Add everything to document
                 textdiv.appendChild(mangatitle);
                 textdiv.appendChild(tagdiv);
-                textdiv.appendChild(desctext);
                 elemdiv.appendChild(mangaimage);
                 elemdiv.appendChild(textdiv);
 

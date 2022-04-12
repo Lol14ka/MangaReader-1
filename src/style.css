@@ -4,6 +4,8 @@
 
 body {
     background-color: #191a1c;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -18,45 +20,17 @@ h3 {
     color: white;
 }
 
+#search-terms {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .panel {
     display: flex;
-    flex-direction: row;
-    width: 600px;
-    height: 131px;
-    background-color: #272b30;
-    border-radius: 2px;
-    margin-right: 25px;
-}
-  
-.paneltitle {
-    color: white;
-}
-  
-.paneltext {
-    display: flex;
-    flex-direction: column;
-    margin-left: 1vw;
-}
-  
-.paneltags {
-    display: flex;
-    margin-top: -1vw;
-}
-  
-.tag {
-    font-size: 9px;
-    margin-right: 12px;
-    padding-left: 4px;
-    padding-right: 4px;
-    border: 1px solid #4f4f4f;
-    border-radius: 8px;
-    background-color: #4f4f4f;
-    white-space: nowrap;
-}
-  
-.paneldesc {
-    margin-top: -0.025vh;
-    width: fit-content;
+    background-color: #434343;
+    width: 700px;
+    margin-right: 50px;
 }
 
 .panelimage {
@@ -65,8 +39,33 @@ h3 {
     object-fit: cover;
 }
 
-#search-terms {
+.paneltext {
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.paneltitle {
+    color: white;
+}
+
+.paneltags {
     display: flex;
-    flex-direction: row;
+    width: 600px;
     flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.paneltags .tag {
+    background-color: #5e5e5e;
+    color: white;
+    margin-right: 25px;
+    white-space: nowrap;
+}
+
+.paneldesc {
+    color: white;
+    width: 15%;
+    white-space: nowrap;
+    overflow: hidden;
 }
