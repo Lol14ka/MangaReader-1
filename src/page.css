@@ -1,0 +1,48 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #191a1c;
+    margin: 0;
+    padding: 0;
+}
+
+.infotitle {
+    color: white;
+}
+
+.infotags .infotag {
+    color: white;
+}
+
+.infodesc {
+    color: white;
+}
+
+.infochapterlist {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.infochapterlist a p {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    margin-block: 0;
+    margin-inline: 0;
+}
+
+.infochapterlist a {
+    position: relative;
+}
+
+.backarrow {
+    color: white;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    margin-left: 25px;
+    margin-top: 15px;
+}

@@ -2,7 +2,7 @@ const MFA = require('mangadex-full-api');
 
 const queryString = window.location.search;
 const urlparams =  new URLSearchParams(queryString);
-const term = urlparams.get('term');
+let term = urlparams.get('term');
 console.log(term);
 
 search();
@@ -41,7 +41,7 @@ async function search() {
                 var mangaimage = document.createElement("img");
                 mangaimage.src = coverimage;
                 mangaimage.className = 'panelimage';
-                mangaimage.width = 85;
+                mangaimage.width = 125;
 
                 //new div for text
                 var textdiv = document.createElement("div");

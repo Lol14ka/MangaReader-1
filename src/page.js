@@ -6,6 +6,10 @@ const title = urlparams.get('Mtitle');
 const cover = urlparams.get('cover');
 getMangaInfo();
 
+window.onload = function() {
+    document.title = title;
+}
+
 function getMangaInfo() {
     MFA.Manga.search({
         title: title
@@ -13,7 +17,7 @@ function getMangaInfo() {
         let tags = results[0].tags
 
         //Creating chapter list
-        var chapterlist = document.createElement('ul');
+        var chapterlist = document.createElement('div');
         chapterlist.className = "infochapterlist";
 
         let chapters = MFA.Manga.getFeed(id=results[0].id, {translatedLanguage: ['en'], order: {volume: "asc", chapter: "asc"}},true).then(chapter => {
@@ -70,7 +74,7 @@ function setChapterList(chapter, chapterlist) {
     var chapter_num = chapter.chapter;
     var chapter_title = chapter.title;
     var cltitle = chapter_num + ' ' + chapter_title;
-    var listadd = document.createElement('li');
+    var listadd = document.createElement('p');
     listadd.innerHTML = cltitle;
     var attrib = document.createElement('a');
     attrib.href = "#";
