@@ -8,22 +8,50 @@ body {
     padding: 0;
 }
 
+.infopanel {
+    display: flex;
+    margin: 50px;
+}
+
 .infotitle {
     color: white;
+    margin-left: 10px;
+}
+
+.infoimage {
+    border-radius: 17px;
+}
+
+.infotags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -1vh;
+    width: 600px;
 }
 
 .infotags .infotag {
     color: white;
+    background-color: #4e4e4e;
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 8px;
+    margin-block: 0;
+    margin-inline: 0;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 .infodesc {
     color: white;
+    width: 600px;
+    text-align: left;
+    margin-left: 10px;
 }
 
 .infochapterlist {
-    position: absolute;
     display: flex;
     flex-direction: column;
+    margin-left: 50px;
 }
 
 .infochapterlist a p {
@@ -32,10 +60,18 @@ body {
     padding: 0;
     margin-block: 0;
     margin-inline: 0;
+    color: white;
+    background-color: #4e4e4e;
+    padding: 20px;
+    font-weight: 700;
+    border-radius: 18px;
 }
 
 .infochapterlist a {
     position: relative;
+    text-decoration: none;
+    margin-bottom: 10px;
+    width: 800px;
 }
 
 .backarrow {

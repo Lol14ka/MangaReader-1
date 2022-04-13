@@ -34,7 +34,7 @@ async function search() {
                 var elemdiv = document.createElement("div");
                 elemdiv.className = "panel";
                 elemdiv.addEventListener('click', function() {
-                    window.location = 'page.html?Mtitle='+title+"&cover="+coverimage;
+                    window.location = 'page.html?Mtitle='+title+"&cover="+coverimage+"&term="+term;
                 })
 
                 //cover image of manga

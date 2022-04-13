@@ -4,10 +4,14 @@ const queryString = window.location.search;
 const urlparams =  new URLSearchParams(queryString);
 const title = urlparams.get('Mtitle');
 const cover = urlparams.get('cover');
+const term = urlparams.get('term');
 getMangaInfo();
 
 window.onload = function() {
     document.title = title;
+    let backbutton = document.getElementById("backbutton").addEventListener('click', function() {
+        window.location = 'search.html?term='+term;
+    });
 }
 
 function getMangaInfo() {
@@ -20,7 +24,7 @@ function getMangaInfo() {
         var chapterlist = document.createElement('div');
         chapterlist.className = "infochapterlist";
 
-        let chapters = MFA.Manga.getFeed(id=results[0].id, {translatedLanguage: ['en'], order: {volume: "asc", chapter: "asc"}},true).then(chapter => {
+        let chapters = MFA.Manga.getFeed(id=results[0].id, {translatedLanguage: ['en'], order: {volume: "desc", chapter: "desc"}},true).then(chapter => {
             chapter.forEach((elem,i) => setChapterList(elem, chapterlist));
         });
 
@@ -65,19 +69,22 @@ function getMangaInfo() {
         textdiv.appendChild(tagsdiv);
         textdiv.appendChild(desctext);
         elemdiv.appendChild(textdiv);
-        elemdiv.appendChild(chapterlist);
         document.body.appendChild(elemdiv);
+        document.body.appendChild(chapterlist);
     })
 }
 
-function setChapterList(chapter, chapterlist) {
+async function setChapterList(chapter, chapterlist) {
     var chapter_num = chapter.chapter;
-    var chapter_title = chapter.title;
-    var cltitle = chapter_num + ' ' + chapter_title;
-    var listadd = document.createElement('p');
-    listadd.innerHTML = cltitle;
-    var attrib = document.createElement('a');
-    attrib.href = "#";
-    attrib.appendChild(listadd);
-    chapterlist.appendChild(attrib);
+    if (chapter_num != null) {
+        var cltitle = "Chapter "+chapter_num;
+        var listadd = document.createElement('p');
+        listadd.innerHTML = cltitle;
+        var attrib = document.createElement('a');
+        console.log(chapter);
+        let pages = await chapter.getReadablePages(); 
+        attrib.href=`read.html?chapter_id=${chapter.id}`;
+        attrib.appendChild(listadd);
+        chapterlist.appendChild(attrib);
+    }
 }
